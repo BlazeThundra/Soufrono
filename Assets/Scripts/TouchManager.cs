@@ -12,6 +12,11 @@ public class TouchManager : MonoBehaviour
 
  [SerializeField] float forceMultiplier;
 
+ public void Start()
+ {
+  rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+ }
+
  public void OnTouchPosition(InputAction.CallbackContext ctx)
  {
   currentPos = ctx.ReadValue<Vector2>();
