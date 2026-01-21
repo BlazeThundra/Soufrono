@@ -10,21 +10,17 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
-     scoreText.text = score.ToString();
+     if (scoreText != null)
+     {
+      scoreText.text = score.ToString();
+     }
     }
 
     void Update()
     {
-     scoreText.text = score.ToString();
-
-     foreach(Transform obstacle in obstaclesParent)
+     if(scoreText != null)
      {
-      if(ball.transform.position.y > obstacle.transform.position.y && obstacle.GetComponent<Obstacle>().scored == false)
-      {
-       obstacle.GetComponent<Obstacle>().scored = true;
-       obstacle.GetComponent<SpriteRenderer>().color = Color.red;
-       score ++;
-      }
+      scoreText.text = score.ToString();
      }
     }
 }
