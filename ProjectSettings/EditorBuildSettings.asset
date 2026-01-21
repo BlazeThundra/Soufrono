@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Josh.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: ab4f89817b12dc04cb76bd12f20ca93e
   - enabled: 1
     path: Assets/Scenes/Highscore.unity
