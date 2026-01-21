@@ -54,7 +54,7 @@ public class SaveManager : MonoBehaviour
  {
   if(highscoreText != null)
   {
-   highscoreText.text = highscore.ToString();
+   highscoreText.text = highscore1.ToString();
   }
  }
 }
