@@ -4,7 +4,11 @@ using UnityEngine.InputSystem;
 
 public class SaveManager : MonoBehaviour
 {
- public int highscore;
+ public int highscore1;
+ public int highscore2;
+ public int highscore3;
+ public int highscore4;
+ public int highscore5;
  [SerializeField] TextMeshProUGUI highscoreText;
  const string highscoreKey = "highscore";
 
