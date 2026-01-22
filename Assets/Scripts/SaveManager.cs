@@ -12,7 +12,11 @@ public class SaveManager : MonoBehaviour
  public int highscore4 = 0;
  public int highscore5 = 0;
  
- [SerializeField] TextMeshProUGUI highscoreText;
+ [SerializeField] TextMeshProUGUI highscore1Text;
+ [SerializeField] TextMeshProUGUI highscore2Text;
+ [SerializeField] TextMeshProUGUI highscore3Text;
+ [SerializeField] TextMeshProUGUI highscore4Text;
+ [SerializeField] TextMeshProUGUI highscore5Text;
  const string highscore1Key = "highscore1";
  const string highscore2Key = "highscore2";
  const string highscore3Key = "highscore3";
@@ -29,6 +33,12 @@ public class SaveManager : MonoBehaviour
   if (Keyboard.current.rKey.wasPressedThisFrame)
   {
    ResetScore();
+  }
+
+  if (Keyboard.current.sKey.wasPressedThisFrame)
+  {
+   SaveData();
+   LoadData();
   }
  }
 
@@ -69,6 +79,7 @@ public class SaveManager : MonoBehaviour
   {
    PlayerPrefs.SetInt(highscore5Key, scoreManager.score);
   }
+  UpdateUI();
  }
 
  void LoadData()
@@ -90,14 +101,34 @@ public class SaveManager : MonoBehaviour
   PlayerPrefs.SetInt(highscore3Key, 0);
   PlayerPrefs.SetInt(highscore4Key, 0);
   PlayerPrefs.SetInt(highscore5Key, 0);
-  UpdateUI();
+  LoadData();
  }
 
  void UpdateUI()
  {
-  // if(highscoreText != null)
-  // {
-  //  highscoreText.text = highscore1.ToString();
-  // }
+  if(highscore1Text != null)
+  {
+   highscore1Text.text = highscore1.ToString();
+  }
+
+  if(highscore2Text != null)
+  {
+   highscore2Text.text = highscore2.ToString();
+  }
+
+  if(highscore3Text != null)
+  {
+   highscore3Text.text = highscore3.ToString();
+  }
+
+  if(highscore4Text != null)
+  {
+   highscore4Text.text = highscore4.ToString();
+  }
+  
+  if(highscore5Text != null)
+  {
+   highscore5Text.text = highscore5.ToString();
+  }
  }
 }
