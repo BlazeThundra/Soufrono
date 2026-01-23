@@ -43,6 +43,5 @@ public class TouchManager : MonoBehaviour
   float distance = Vector2.Distance(startPos, endPos);
 
   rb.AddForce(normalizedDir * (distance * forceMultiplier), ForceMode2D.Impulse);
-  Debug.Log("Apply force");
  }
 }

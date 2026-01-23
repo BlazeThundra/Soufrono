@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
 
  void Update()
  {
-  if(!scored)
+  if(!scored && CompareTag("Obstacle"))
   {
    if(ball.transform.position.y > transform.position.y)
    {

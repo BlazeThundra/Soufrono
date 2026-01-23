@@ -4,11 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
  [SerializeField] GameObject cam;
  [SerializeField] GameObject ball;
-
- void Start()
- {
-    
- }
+ [SerializeField] GameObject floor;
 
  void LateUpdate()
  {
@@ -18,6 +14,7 @@ public class CameraMovement : MonoBehaviour
    newPos.y = ball.transform.position.y;
    newPos.z = -10;
    cam.transform.position = newPos;
+   floor.transform.position = new Vector2(0, newPos.y -4.81f);
   }
  }
 }
