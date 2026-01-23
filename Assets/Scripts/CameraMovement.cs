@@ -5,11 +5,6 @@ public class CameraMovement : MonoBehaviour
  [SerializeField] GameObject cam;
  [SerializeField] GameObject ball;
 
- void Start()
- {
-    
- }
-
  void LateUpdate()
  {
   if(cam.transform.position.y <= ball.transform.position.y)

@@ -108,27 +108,27 @@ public class SaveManager : MonoBehaviour
  {
   if(highscore1Text != null)
   {
-   highscore1Text.text = highscore1.ToString();
+   highscore1Text.text = "1)        " + highscore1.ToString();
   }
 
   if(highscore2Text != null)
   {
-   highscore2Text.text = highscore2.ToString();
+   highscore2Text.text = "2)        " + highscore2.ToString();
   }
 
   if(highscore3Text != null)
   {
-   highscore3Text.text = highscore3.ToString();
+   highscore3Text.text = "3)        " + highscore3.ToString();
   }
 
   if(highscore4Text != null)
   {
-   highscore4Text.text = highscore4.ToString();
+   highscore4Text.text = "4)        " + highscore4.ToString();
   }
   
   if(highscore5Text != null)
   {
-   highscore5Text.text = highscore5.ToString();
+   highscore5Text.text = "5)        " + highscore5.ToString();
   }
  }
 }
