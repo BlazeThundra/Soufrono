@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1845425172}
+  saveManager: {fileID: 1845425171}
   sr: {fileID: 1495272496}
   rb: {fileID: 1495272498}
 --- !u!1 &1563580861

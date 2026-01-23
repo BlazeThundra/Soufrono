@@ -25,14 +25,14 @@ public class SpawnManager : MonoBehaviour
   levelGroup ++;
  }
 
- public void DeleteLevel()
- {
-  foreach(/*child of --obstacles--*/)
-  {
-   if(group < levelGroup - 1)
-   {
-    Destroy(gameObject);
-   }
-  }
- }
+//  public void DeleteLevel()
+//  {
+//   foreach(/*child of --obstacles--*/)
+//   {
+//    if(group < levelGroup - 1)
+//    {
+//     Destroy(gameObject);
+//    }
+//   }
+//  }
 }
