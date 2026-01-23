@@ -21,9 +21,9 @@ public class Obstacle : MonoBehaviour
   {
    if(ball.transform.position.y > transform.position.y)
    {
-        scored = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
-        managers.GetComponent<ScoreManager>().score ++;
+    scored = true;
+    GetComponent<SpriteRenderer>().color = Color.red;
+    managers.GetComponent<ScoreManager>().score ++;
    }
   }
  }
