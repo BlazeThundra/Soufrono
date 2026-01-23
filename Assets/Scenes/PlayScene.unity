@@ -1167,6 +1167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1845425172}
+  sr: {fileID: 1495272496}
+  rb: {fileID: 1495272498}
 --- !u!1 &1563580861
 GameObject:
   m_ObjectHideFlags: 0
