@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,14 +17,6 @@ public class SpawnManager : MonoBehaviour
   levelGroup ++;
  }
 
- void Update()
- {
-  if (Keyboard.current.wKey.wasPressedThisFrame)
-  {
-   SpawnLevel();
-  }
- }
-
  public void SpawnLevel()
  {
   int randomPicked = Random.Range(0, levelPrefabs.Length);
@@ -32,4 +24,15 @@ public class SpawnManager : MonoBehaviour
   Instantiate(levelPrefabs[randomPicked], spawnPos, Quaternion.identity);
   levelGroup ++;
  }
+
+//  public void DeleteLevel()
+//  {
+//   foreach(/*child of --obstacles--*/)
+//   {
+//    if(group < levelGroup - 1)
+//    {
+//     Destroy(gameObject);
+//    }
+//   }
+//  }
 }

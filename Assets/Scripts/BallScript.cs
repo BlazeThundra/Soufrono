@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class BallScript : MonoBehaviour
 {
  [SerializeField] SpawnManager spawnManager;
+ [SerializeField] SaveManager saveManager;
  [SerializeField] SpriteRenderer sr;
  [SerializeField] Rigidbody2D rb;
 
@@ -28,6 +29,7 @@ public class BallScript : MonoBehaviour
 
  public IEnumerator EndGame()
  {
+  saveManager.SaveData();
   yield return new WaitForSeconds(2f);
   SceneManager.LoadScene("MainMenu");
  }

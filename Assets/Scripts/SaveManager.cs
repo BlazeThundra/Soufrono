@@ -47,7 +47,7 @@ public class SaveManager : MonoBehaviour
   SaveData();
  }
 
- void SaveData()
+ public void SaveData()
  {
   if(scoreManager.score > PlayerPrefs.GetInt(highscore1Key))
   {
