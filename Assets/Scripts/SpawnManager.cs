@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
   Instantiate(levelPrefabs[randomPicked], spawnPos, Quaternion.identity);
   if(selectedPrefab.name.Contains("SlopeRight2Boxes"))
   {
-   levelHorizontalSpace += 7.5f;
+   levelHorizontalSpace += 7f;
   }
   levelGroup ++;
  }
