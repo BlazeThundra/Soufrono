@@ -9,7 +9,11 @@ public class Obstacle : MonoBehaviour
  
  void Awake()
  {
+  if(gameObject.name != "Floor")
+  {
   gameObject.transform.parent = GameObject.Find("--Obstacles--").transform;
+  }
+  
   ball = GameObject.Find("Ball");
   managers = GameObject.Find("Managers");
  }
