@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
@@ -283,28 +282,13 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04142016, y: 2.2899997, z: -10}
+  m_LocalPosition: {x: -0.04142016, y: 4.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1118501180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8da1b26c151c647ad56f72a01f0dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
-  ball: {fileID: 1495272495}
-  floor: {fileID: 1118501176}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +307,7 @@ MonoBehaviour:
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
   UpdateMethod: 2
-  BlendUpdateMethod: 1
+  BlendUpdateMethod: 0
   LensModeOverride:
     Enabled: 0
     DefaultMode: 2
@@ -523,7 +507,7 @@ Transform:
   m_GameObject: {fileID: 953138190}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04142016, y: 2.2899997, z: -10}
+  m_LocalPosition: {x: -0.04142016, y: 4.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -544,16 +528,16 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: -0.03, y: 0.28}
+    ScreenPosition: {x: -0.03, y: 0.5}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.99, y: 0.5}
+      Size: {x: 1.05, y: 0.26}
     HardLimits:
       Enabled: 0
-      Size: {x: 0.99, y: 0.8}
+      Size: {x: 1.08, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: -1.27, z: 0}
+  TargetOffset: {x: 0, y: -1.5, z: 0}
   Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 0
@@ -1504,6 +1488,7 @@ MonoBehaviour:
   - {fileID: 3175140670845850999, guid: 42055b9d556d2e24ab87c264bfdc35c4, type: 3}
   - {fileID: 291131761356551868, guid: a160a222e7168464ebb6576b9ca9fb60, type: 3}
   - {fileID: 291131761356551868, guid: f5214450786b2a14397b546a00afc0e4, type: 3}
+  - {fileID: 291131761356551868, guid: 1cc83379a4034a847ba05465b8634928, type: 3}
 --- !u!1 &2231103236613026633
 GameObject:
   m_ObjectHideFlags: 0
