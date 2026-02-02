@@ -1352,6 +1352,7 @@ GameObject:
   - component: {fileID: 1845425170}
   - component: {fileID: 1845425171}
   - component: {fileID: 1845425172}
+  - component: {fileID: 1845425173}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0}
   endPos: {x: 0, y: 0}
   currentPos: {x: 0, y: 0}
+  inverted: 1
   forceMultiplier: 0.01
 --- !u!114 &1845425170
 MonoBehaviour:
@@ -1564,6 +1566,19 @@ MonoBehaviour:
   - {fileID: 291131761356551868, guid: 1cc83379a4034a847ba05465b8634928, type: 3}
   - {fileID: 291131761356551868, guid: a160a222e7168464ebb6576b9ca9fb60, type: 3}
   obstacleParent: {fileID: 0}
+--- !u!114 &1845425173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845425166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc0b8ef6aa23d540b758f4fd0b0d7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertedControls: 1
 --- !u!1 &2231103236613026633
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using UnityEditor.SettingsManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,12 +6,19 @@ public class TouchManager : MonoBehaviour
 {
  [SerializeField] GameObject player;
  [SerializeField] Rigidbody2D rb;
+ SettingsManager settingsManager;
 
  public Vector2 startPos;
  public Vector2 endPos;
  public Vector2 currentPos;
+ public int inverted = 1;
 
  [SerializeField] float forceMultiplier;
+
+ public void Awake()
+ {
+  settingsManager = GetComponent<SettingsManager>();
+ }
 
  public void Start()
  {
@@ -41,7 +49,16 @@ public class TouchManager : MonoBehaviour
   Vector2 dirVector = endPos - startPos;
   Vector2 normalizedDir = dirVector.normalized;
   float distance = Vector2.Distance(startPos, endPos);
+  
+  if(settingsManager.invertedControls == 1)
+  {
+   inverted = -1;
+  }
+  else
+  {
+   inverted = 1;
+  }
 
-  rb.AddForce(normalizedDir * (distance * forceMultiplier), ForceMode2D.Impulse);
+  rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
  }
 }
