@@ -6,7 +6,6 @@ public class TouchManager : MonoBehaviour
 {
  [SerializeField] GameObject player;
  [SerializeField] Rigidbody2D rb;
- SettingsManager settingsManager;
 
  public Vector2 startPos;
  public Vector2 endPos;
@@ -17,7 +16,7 @@ public class TouchManager : MonoBehaviour
 
  public void Awake()
  {
-  settingsManager = GetComponent<SettingsManager>();
+    
  }
 
  public void Start()
@@ -50,15 +49,15 @@ public class TouchManager : MonoBehaviour
   Vector2 normalizedDir = dirVector.normalized;
   float distance = Vector2.Distance(startPos, endPos);
   
-  if(settingsManager.invertedControls == 1)
+  if(PlayerPrefs.GetInt("invertedKey") == 1)
   {
    inverted = -1;
+   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
   }
-  else
+  else if(PlayerPrefs.GetInt("invertedKey") == 0)
   {
    inverted = 1;
+   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
   }
-
-  rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
  }
 }
