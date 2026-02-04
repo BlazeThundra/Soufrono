@@ -3,18 +3,22 @@ using UnityEngine;
 public class SettingsManager : MonoBehaviour
 {
  public int invertedControls = 0;
- const string invertedKey = "0";
+ const string invertedKey = "invertedKey";
 
  public void InvertedToggle(string key)
  {
-    int invertedControls = PlayerPrefs.GetInt(invertedKey, 0);
-    int newValue = invertedControls == 1 ? 0 : 1;
-    PlayerPrefs.SetInt(invertedKey, newValue);
-    print(invertedControls);
+    invertedControls = PlayerPrefs.GetInt(invertedKey, 0);
+    if(invertedControls == 0)
+    {
+     invertedControls = 1;
+    }
+    else{invertedControls = 0;}
+    PlayerPrefs.SetInt(invertedKey, invertedControls);
  }
 
  public bool LoadBool(string key)
  {
+  PlayerPrefs.GetInt(invertedKey, 0);
   return PlayerPrefs.GetInt(key, 0) == 1;
  }
 }
