@@ -8,10 +8,11 @@ public class BallScript : MonoBehaviour
  [SerializeField] SaveManager saveManager;
  [SerializeField] SpriteRenderer sr;
  [SerializeField] Rigidbody2D rb;
+ bool godMode = false;
 
  public void OnCollisionEnter2D(Collision2D other)
  {
-  if(other.gameObject.CompareTag("Obstacle"))
+  if(other.gameObject.CompareTag("Obstacle") && !godMode)
   {
    sr.color = Color.red;
    rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -27,10 +28,27 @@ public class BallScript : MonoBehaviour
   }
  }
 
+ void Update()
+ {
+  if(Input.GetKeyDown(KeyCode.Space))
+  {
+   if(!godMode)
+   {
+    godMode = true;
+    print("godMode on");
+   }
+  }
+
+  if(Input.GetKeyDown(KeyCode.W))
+  {
+   spawnManager.SpawnLevel();
+  }
+ }
+
  public IEnumerator EndGame()
  {
-  saveManager.SaveData();
-  yield return new WaitForSeconds(2f);
-  SceneManager.LoadScene("MainMenu");
+   saveManager.SaveData();
+   yield return new WaitForSeconds(2f);
+   SceneManager.LoadScene("MainMenu");
  }
 }

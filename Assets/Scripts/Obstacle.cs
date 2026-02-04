@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
 
  void Update()
  {
-  if(!scored && CompareTag("Obstacle"))
+  if(!scored && CompareTag("Obstacle") && gameObject.name != "Floor")
   {
    if(ball.transform.position.y > transform.position.y)
    {
