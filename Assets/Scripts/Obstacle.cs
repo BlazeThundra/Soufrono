@@ -16,6 +16,8 @@ public class Obstacle : MonoBehaviour
   
   ball = GameObject.Find("Ball");
   managers = GameObject.Find("Managers");
+  
+  group = managers.GetComponent<SpawnManager>().levelGroup;
  }
 
  void Update()
