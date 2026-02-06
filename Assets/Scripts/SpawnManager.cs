@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SpawnManager : MonoBehaviour
 {
- int levelGroup = 1;
+ public int levelGroup = 1;
  float levelHorizontalOffset = 0;
 
  [SerializeField] GameObject[] levelPrefabs;
@@ -28,13 +28,14 @@ public class SpawnManager : MonoBehaviour
    levelHorizontalOffset += 7f;
   }
   levelGroup ++;
+  DeleteLevel();
  }
 
  public void DeleteLevel()
  {
   foreach(Transform child in obstacleParent.transform)
   {
-   if(child.GetComponent<Obstacle>().group < levelGroup - 1)
+   if(child.GetComponent<Obstacle>().group < levelGroup - 3)
    {
     Destroy(child.gameObject);
    }
