@@ -25,6 +25,7 @@ public class BallScript : MonoBehaviour
   if(other.gameObject.CompareTag("SpawnZone"))
   {
    spawnManager.SpawnLevel();
+   Destroy(other.gameObject);
   }
  }
 
