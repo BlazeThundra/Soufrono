@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 4864079259209930603}
   - component: {fileID: 6504554541365387658}
   - component: {fileID: 5370591428380904582}
+  - component: {fileID: 1437982602683017729}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Obstacle
@@ -796,6 +797,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!111 &1437982602683017729
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208341605804592000}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &7949404058132572206
 GameObject:
   m_ObjectHideFlags: 0
