@@ -10,6 +10,10 @@ public class BallScript : MonoBehaviour
  [SerializeField] Rigidbody2D rb;
  bool godMode = false;
 
+ [SerializeField] AudioSource audioSource;
+ [SerializeField] AudioClip bonkSound;
+ [SerializeField] float volume;
+
  public void OnCollisionEnter2D(Collision2D other)
  {
   if(other.gameObject.CompareTag("Obstacle") && !godMode)
@@ -18,6 +22,7 @@ public class BallScript : MonoBehaviour
    rb.constraints = RigidbodyConstraints2D.FreezeAll;
    StartCoroutine(EndGame());
   }
+  audioSource.PlayOneShot(bonkSound, volume);
  }
 
  public void OnTriggerEnter2D(Collider2D other)

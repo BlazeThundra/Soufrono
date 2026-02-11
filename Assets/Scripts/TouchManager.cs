@@ -6,6 +6,10 @@ public class TouchManager : MonoBehaviour
  [SerializeField] GameObject player;
  [SerializeField] Rigidbody2D rb;
 
+ [SerializeField] AudioSource audioSource;
+ [SerializeField] AudioClip wooshSound;
+ [SerializeField] float volume;
+
  public Vector2 startPos;
  public Vector2 endPos;
  public Vector2 currentPos;
@@ -44,6 +48,8 @@ public class TouchManager : MonoBehaviour
 
  public void ApplyForce()
  {
+  audioSource.PlayOneShot(wooshSound, volume);
+
   Vector2 dirVector = endPos - startPos;
   Vector2 normalizedDir = dirVector.normalized;
   float distance = Vector2.Distance(startPos, endPos);

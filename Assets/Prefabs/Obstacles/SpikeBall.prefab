@@ -158,12 +158,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477082580897858984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 868f3543863c70546b288b0f46748b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDirection: {x: 1, y: 0}
   distance: 1
+  speed: 1
 --- !u!95 &1114120571968601568
 Animator:
   serializedVersion: 7
