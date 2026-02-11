@@ -1970,14 +1970,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGroup: 1
   levelPrefabs:
+  - {fileID: 291131761356551868, guid: f5214450786b2a14397b546a00afc0e4, type: 3}
+  - {fileID: 291131761356551868, guid: 6ae8e7e779e7fd745a49dc5e1499ecaa, type: 3}
   - {fileID: 5398871182083685727, guid: ce830f6c31a577349b920223d8e24097, type: 3}
   - {fileID: 2178194848407572949, guid: 01586f153ca549c46b16ff27004d7043, type: 3}
   - {fileID: 3175140670845850999, guid: 42055b9d556d2e24ab87c264bfdc35c4, type: 3}
   - {fileID: 291131761356551868, guid: a160a222e7168464ebb6576b9ca9fb60, type: 3}
-  - {fileID: 291131761356551868, guid: f5214450786b2a14397b546a00afc0e4, type: 3}
+  - {fileID: 291131761356551868, guid: 7f821025fabd808488a76cc2d4c549f8, type: 3}
   - {fileID: 291131761356551868, guid: 1cc83379a4034a847ba05465b8634928, type: 3}
-  - {fileID: 291131761356551868, guid: a160a222e7168464ebb6576b9ca9fb60, type: 3}
-  - {fileID: 291131761356551868, guid: 6ae8e7e779e7fd745a49dc5e1499ecaa, type: 3}
   obstacleParent: {fileID: 410932736}
 --- !u!114 &1845425173
 MonoBehaviour:
