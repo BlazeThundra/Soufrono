@@ -12,7 +12,7 @@ public class BallScript : MonoBehaviour
 
  [SerializeField] AudioSource audioSource;
  [SerializeField] AudioClip bonkSound;
- [SerializeField] float volume;
+ [SerializeField] float volume = 1;
 
  public void OnCollisionEnter2D(Collision2D other)
  {
@@ -22,7 +22,11 @@ public class BallScript : MonoBehaviour
    rb.constraints = RigidbodyConstraints2D.FreezeAll;
    StartCoroutine(EndGame());
   }
-  audioSource.PlayOneShot(bonkSound, volume);
+
+  if(other.gameObject.CompareTag("Wall"))
+  {
+   audioSource.PlayOneShot(bonkSound, volume);
+  }
  }
 
  public void OnTriggerEnter2D(Collider2D other)

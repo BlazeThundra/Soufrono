@@ -1567,8 +1567,8 @@ MonoBehaviour:
   sr: {fileID: 1495272496}
   rb: {fileID: 1495272498}
   audioSource: {fileID: 1495272501}
-  bonkSound: {fileID: 0}
-  volume: 0
+  bonkSound: {fileID: 8300000, guid: ec34f6172a9e972468781950eea82fe9, type: 3}
+  volume: 1
 --- !u!82 &1495272501
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   player: {fileID: 1495272495}
   rb: {fileID: 1495272498}
   audioSource: {fileID: 1845425174}
-  wooshSound: {fileID: 0}
+  wooshSound: {fileID: 8300000, guid: 9d815693daabaf44c859199fb277a13d, type: 3}
   volume: 1
   startPos: {x: 0, y: 0}
   endPos: {x: 0, y: 0}
@@ -1977,6 +1977,7 @@ MonoBehaviour:
   - {fileID: 291131761356551868, guid: f5214450786b2a14397b546a00afc0e4, type: 3}
   - {fileID: 291131761356551868, guid: 1cc83379a4034a847ba05465b8634928, type: 3}
   - {fileID: 291131761356551868, guid: a160a222e7168464ebb6576b9ca9fb60, type: 3}
+  - {fileID: 291131761356551868, guid: 6ae8e7e779e7fd745a49dc5e1499ecaa, type: 3}
   obstacleParent: {fileID: 410932736}
 --- !u!114 &1845425173
 MonoBehaviour:
@@ -2188,7 +2189,7 @@ GameObject:
   - component: {fileID: 3975256777618239357}
   m_Layer: 0
   m_Name: Wall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2261,7 +2262,7 @@ GameObject:
   - component: {fileID: 4261761976742303075}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
