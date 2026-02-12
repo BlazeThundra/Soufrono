@@ -15,11 +15,12 @@ public class TouchManager : MonoBehaviour
  public Vector2 currentPos;
  public int inverted = 1;
 
- [SerializeField] float forceMultiplier;
+ [SerializeField] float forceMultiplier = 1;
 
  public void Awake()
  {
-    
+  forceMultiplier = PlayerPrefs.GetFloat("sensitivityKey");
+  print(forceMultiplier);
  }
 
  public void Start()

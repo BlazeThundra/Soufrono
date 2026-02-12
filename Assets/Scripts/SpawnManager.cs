@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
   }
   if(selectedPrefab.name.Contains("SlopeLeft2Boxes"))
   {
-   levelHorizontalOffset -= 7f;
+   levelHorizontalOffset += -7f;
   }
   levelGroup ++;
   DeleteLevel();
