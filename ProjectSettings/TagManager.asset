@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - SpawnZone
+  - WallBackGround
+  - Wall
   layers:
   - Default
   - TransparentFX

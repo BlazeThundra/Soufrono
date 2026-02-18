@@ -1,9 +1,15 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
  public int invertedControls = 0;
  const string invertedKey = "invertedKey";
+ public float sensitivityMult = 1;
+ const string sensitivityKey = "sensitivityKey";
+ [SerializeField] GameObject sensSlider;
+ [SerializeField] TextMeshProUGUI sensText;
 
  public void InvertedToggle(string key)
  {
@@ -16,9 +22,19 @@ public class SettingsManager : MonoBehaviour
     PlayerPrefs.SetInt(invertedKey, invertedControls);
  }
 
+ public void SensitivitySwitch()
+ {
+  sensitivityMult = sensSlider.GetComponent<Slider>().value;
+  sensitivityMult = sensitivityMult * 10; sensitivityMult = Mathf.RoundToInt(sensitivityMult); sensitivityMult = sensitivityMult / 10;
+  sensText.text = "Sensitivity: " + sensitivityMult;
+  PlayerPrefs.SetFloat(sensitivityKey, sensitivityMult);
+  print(sensitivityMult);
+ }
+
  public bool LoadBool(string key)
  {
   PlayerPrefs.GetInt(invertedKey, 0);
+  PlayerPrefs.GetFloat(sensitivityKey, 1);
   return PlayerPrefs.GetInt(key, 0) == 1;
  }
 }
