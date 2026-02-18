@@ -58,12 +58,12 @@ public class TouchManager : MonoBehaviour
   if(PlayerPrefs.GetInt("invertedKey") == 1)
   {
    inverted = -1;
-   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
+   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted * .01f, ForceMode2D.Impulse);
   }
   else if(PlayerPrefs.GetInt("invertedKey") == 0)
   {
    inverted = 1;
-   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted, ForceMode2D.Impulse);
+   rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted * .01f, ForceMode2D.Impulse);
   }
  }
 }

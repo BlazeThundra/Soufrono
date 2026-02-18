@@ -25,8 +25,10 @@ public class SettingsManager : MonoBehaviour
  public void SensitivitySwitch()
  {
   sensitivityMult = sensSlider.GetComponent<Slider>().value;
-  sensText.text = "Sensitivity: " + Mathf.CeilToInt(sensitivityMult);
+  sensitivityMult = sensitivityMult * 10; sensitivityMult = Mathf.RoundToInt(sensitivityMult); sensitivityMult = sensitivityMult / 10;
+  sensText.text = "Sensitivity: " + sensitivityMult;
   PlayerPrefs.SetFloat(sensitivityKey, sensitivityMult);
+  print(sensitivityMult);
  }
 
  public bool LoadBool(string key)
