@@ -14,6 +14,7 @@ public class TouchManager : MonoBehaviour
  public Vector2 endPos;
  public Vector2 currentPos;
  public int inverted = 1;
+ public bool started = false;
 
  [SerializeField] float forceMultiplier = 1;
 
@@ -21,11 +22,7 @@ public class TouchManager : MonoBehaviour
  {
   forceMultiplier = PlayerPrefs.GetFloat("sensitivityKey");
   print(forceMultiplier);
- }
-
- public void Start()
- {
-  rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+  rb.constraints = RigidbodyConstraints2D.FreezePosition;
  }
 
  public void OnTouchPosition(InputAction.CallbackContext ctx)
@@ -49,6 +46,7 @@ public class TouchManager : MonoBehaviour
 
  public void ApplyForce()
  {
+  if(!started){rb.constraints = RigidbodyConstraints2D.None; rb.constraints = RigidbodyConstraints2D.FreezeRotation; started = true;}
   audioSource.PlayOneShot(wooshSound, volume);
 
   Vector2 dirVector = endPos - startPos;
