@@ -1,20 +1,26 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
- [SerializeField] GameObject cam;
  [SerializeField] GameObject ball;
- [SerializeField] GameObject floor;
+ [SerializeField] GameObject cinemachine;
+
+ public float smoothTime = 0.2f; 
+ private float zoomVelocity = 0f; 
 
  void LateUpdate()
  {
-  if(cam.transform.position.y <= ball.transform.position.y)
-  {
-   Vector3 newPos = cam.transform.position;
-   newPos.y = ball.transform.position.y;
-   newPos.z = -10;
-   cam.transform.position = newPos;
-   floor.transform.position = new Vector2(0, newPos.y - 6f);
-  }
+  float targetSize = 10f + (ball.GetComponent<Rigidbody2D>().linearVelocityY * 0.1f); 
+  var lens = cinemachine.GetComponent<CinemachineCamera>().Lens;
+
+  lens.OrthographicSize = Mathf.SmoothDamp(
+  lens.OrthographicSize, 
+  targetSize, 
+  ref zoomVelocity, 
+  smoothTime
+  );
+
+  cinemachine.GetComponent<CinemachineCamera>().Lens = lens;
  }
 }
