@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
  [SerializeField] GameObject obstacleParent;
  [SerializeField] ScoreManager scoreManager;
 
+ public string difficulty;
+
  void Awake()
  {
   SpawnLevel();
@@ -20,7 +22,8 @@ public class SpawnManager : MonoBehaviour
  public void SpawnLevel()
  {
   if(scoreManager.score < 20) //Easy levels
-  {
+  {  
+   difficulty = "Easy";
    int randomPicked = Random.Range(0, easyLevels.Length);
    GameObject selectedPrefab = easyLevels[randomPicked];
 
@@ -38,6 +41,7 @@ public class SpawnManager : MonoBehaviour
 
   else if(scoreManager.score < 50) //Medium levels
   {
+   difficulty = "Medium";
    int randomPicked = Random.Range(0, mediumLevels.Length);
    GameObject selectedPrefab = mediumLevels[randomPicked];
 
@@ -55,6 +59,7 @@ public class SpawnManager : MonoBehaviour
 
   else if(scoreManager.score < 50) //Hard levels
   {
+   difficulty = "Hard";
    int randomPicked = Random.Range(0, hardLevels.Length);
    GameObject selectedPrefab = hardLevels[randomPicked];
 
