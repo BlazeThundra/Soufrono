@@ -8,6 +8,6 @@ public class MusicManager : MonoBehaviour
 
  void Awake()
  {
-//   audioSource.Play(sfx, volume);
+  audioSource.PlayOneShot(musicSound, volume);
  }
 }

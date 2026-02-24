@@ -1,18 +1,21 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BallScript : MonoBehaviour
 {
  [SerializeField] SpawnManager spawnManager;
  [SerializeField] SaveManager saveManager;
+ [SerializeField] ScoreManager scoreManager;
  [SerializeField] SpriteRenderer sr;
  [SerializeField] Rigidbody2D rb;
  bool godMode = false;
-
+ [SerializeField] GameObject scoreText;
+ [SerializeField] GameObject difficultyText;
  [SerializeField] AudioSource audioSource;
  [SerializeField] AudioClip bonkSound;
  [SerializeField] float volume = 1;
+ [SerializeField] GameObject endgameParent;
+ [SerializeField] TextMeshProUGUI totalScoreText;
 
  public void OnCollisionEnter2D(Collision2D other)
  {
@@ -20,7 +23,7 @@ public class BallScript : MonoBehaviour
   {
    sr.color = Color.red;
    rb.constraints = RigidbodyConstraints2D.FreezeAll;
-   StartCoroutine(EndGame());
+   EndGame();
   }
 
   if(other.gameObject.CompareTag("Wall"))
@@ -55,10 +58,25 @@ public class BallScript : MonoBehaviour
   }
  }
 
- public IEnumerator EndGame()
+ public void EndGame()
  {
-   saveManager.SaveData();
-   yield return new WaitForSeconds(2f);
-   SceneManager.LoadScene("MainMenu");
+  int highscore = PlayerPrefs.GetInt("highscore1", 0);
+
+  saveManager.SaveData();
+  endgameParent.SetActive(true);
+  
+  scoreText.SetActive(false);
+  difficultyText.SetActive(false);
+  print(highscore);
+
+  if(scoreManager.score > highscore)
+  {
+   totalScoreText.text = "New Highscore: " + scoreManager.score;
+   print("new highscore");
+  }
+  else
+  {
+   totalScoreText.text = "Score: " + scoreManager.score;
+  }
  }
 }
