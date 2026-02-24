@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
  [SerializeField] GameObject ball;
  [SerializeField] GameObject cinemachine;
 
- public float smoothTime = 0.2f; 
+ public float smoothTime = 1f; 
  private float zoomVelocity = 0f; 
 
  void LateUpdate()
