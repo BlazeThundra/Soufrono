@@ -9,6 +9,7 @@ public class TouchManager : MonoBehaviour
  [SerializeField] AudioSource audioSource;
  [SerializeField] AudioClip wooshSound;
  [SerializeField] float volume;
+ [SerializeField] BallScript ballScript;
 
  public Vector2 startPos;
  public Vector2 endPos;
@@ -46,6 +47,7 @@ public class TouchManager : MonoBehaviour
 
  public void ApplyForce()
  {
+  if(!ballScript.gameOver){
   if(!started){rb.constraints = RigidbodyConstraints2D.None; rb.constraints = RigidbodyConstraints2D.FreezeRotation; started = true;}
   audioSource.PlayOneShot(wooshSound, volume);
 
@@ -62,6 +64,7 @@ public class TouchManager : MonoBehaviour
   {
    inverted = 1;
    rb.AddForce(normalizedDir * (distance * forceMultiplier) * inverted * .01f, ForceMode2D.Impulse);
+  }
   }
  }
 }

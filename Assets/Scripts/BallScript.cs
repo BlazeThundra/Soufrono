@@ -13,9 +13,14 @@ public class BallScript : MonoBehaviour
  [SerializeField] GameObject difficultyText;
  [SerializeField] AudioSource audioSource;
  [SerializeField] AudioClip bonkSound;
+ [SerializeField] AudioClip highscoreSound;
+ [SerializeField] AudioClip lossSound;
  [SerializeField] float volume = 1;
  [SerializeField] GameObject endgameParent;
  [SerializeField] TextMeshProUGUI totalScoreText;
+ [SerializeField] GameObject swipeTut;
+
+ public bool gameOver = false;
 
  public void OnCollisionEnter2D(Collision2D other)
  {
@@ -26,7 +31,7 @@ public class BallScript : MonoBehaviour
    EndGame();
   }
 
-  if(other.gameObject.CompareTag("Wall"))
+  if(other.gameObject.CompareTag("Wall") && !gameOver)
   {
    audioSource.PlayOneShot(bonkSound, volume);
   }
@@ -48,7 +53,6 @@ public class BallScript : MonoBehaviour
    if(!godMode)
    {
     godMode = true;
-    print("godMode on");
    }
   }
 
@@ -60,11 +64,14 @@ public class BallScript : MonoBehaviour
 
  public void EndGame()
  {
+  gameOver = true;
+
   int highscore = PlayerPrefs.GetInt("highscore1", 0);
 
   saveManager.SaveData();
   endgameParent.SetActive(true);
   
+  swipeTut.SetActive(false);
   scoreText.SetActive(false);
   difficultyText.SetActive(false);
   print(highscore);
@@ -72,7 +79,6 @@ public class BallScript : MonoBehaviour
   if(scoreManager.score > highscore)
   {
    totalScoreText.text = "New Highscore: " + scoreManager.score;
-   print("new highscore");
   }
   else
   {

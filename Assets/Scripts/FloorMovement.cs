@@ -7,12 +7,13 @@ public class FloorMovement : MonoBehaviour
 
  [SerializeField] TouchManager touchManager;
 
- [SerializeField] float baseSpeed = 5f; 
+ [SerializeField] float baseSpeed = 3f; 
  [SerializeField] float distanceWeight = 0.5f; 
+ [SerializeField] BallScript ballScript;
 
  void LateUpdate()
  {
-  if (ballTransform == null || camTransform == null || !touchManager.started) return;
+  if (ballTransform == null || camTransform == null || !touchManager.started || ballScript.gameOver) return;
 
   float camX = camTransform.position.x;
   float distance = Mathf.Max(0, ballTransform.position.y - transform.position.y);
