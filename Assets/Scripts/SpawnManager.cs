@@ -29,11 +29,11 @@ public class SpawnManager : MonoBehaviour
 
    Vector2 spawnPos = new Vector2(levelHorizontalOffset, levelGroup * 14);
    Instantiate(easyLevels[randomPicked], spawnPos, Quaternion.identity);
-   if(selectedPrefab.name.Contains("SlopeRight2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeRight"))
    {
     levelHorizontalOffset += 7f;
    }
-   if(selectedPrefab.name.Contains("SlopeLeft2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeLeft"))
    {
     levelHorizontalOffset += -7f;
    }
@@ -47,11 +47,11 @@ public class SpawnManager : MonoBehaviour
 
    Vector2 spawnPos = new Vector2(levelHorizontalOffset, levelGroup * 14);
    Instantiate(mediumLevels[randomPicked], spawnPos, Quaternion.identity);
-   if(selectedPrefab.name.Contains("SlopeRight2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeRight"))
    {
     levelHorizontalOffset += 7f;
    }
-   if(selectedPrefab.name.Contains("SlopeLeft2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeLeft"))
    {
     levelHorizontalOffset += -7f;
    }
@@ -65,11 +65,12 @@ public class SpawnManager : MonoBehaviour
 
    Vector2 spawnPos = new Vector2(levelHorizontalOffset, levelGroup * 14);
    Instantiate(hardLevels[randomPicked], spawnPos, Quaternion.identity);
-   if(selectedPrefab.name.Contains("SlopeRight2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeRight"))
    {
+    print("slopedleft)");
     levelHorizontalOffset += 7f;
    }
-   if(selectedPrefab.name.Contains("SlopeLeft2Boxes"))
+   if(selectedPrefab.name.Contains("SlopeLeft"))
    {
     levelHorizontalOffset += -7f;
    }
