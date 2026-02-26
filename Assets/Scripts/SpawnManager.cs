@@ -56,7 +56,7 @@ public class SpawnManager : MonoBehaviour
    }
   }
 
-  else if(scoreManager.score < 50) //Hard levels
+  else //Hard levels
   {
    difficulty = "Hard";
    int randomPicked = Random.Range(0, hardLevels.Length);
