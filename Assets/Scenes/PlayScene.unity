@@ -2142,7 +2142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: -1028}
+  m_AnchoredPosition: {x: 225, y: -1028}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368942562
@@ -2419,8 +2419,8 @@ MonoBehaviour:
   difficultyText: {fileID: 1368942560}
   audioSource: {fileID: 1495272501}
   bonkSound: {fileID: 8300000, guid: ec34f6172a9e972468781950eea82fe9, type: 3}
-  highscoreSound: {fileID: 0}
-  lossSound: {fileID: 0}
+  highscoreSound: {fileID: 8300000, guid: 177c714cd8b790b4592cc63599fe8210, type: 3}
+  lossSound: {fileID: 8300000, guid: fd75e426670fb34418da3825c5103cbb, type: 3}
   volume: 1
   endgameParent: {fileID: 2018298231}
   totalScoreText: {fileID: 1942560359}
