@@ -10,6 +10,13 @@ public class SettingsManager : MonoBehaviour
  const string sensitivityKey = "sensitivityKey";
  [SerializeField] GameObject sensSlider;
  [SerializeField] TextMeshProUGUI sensText;
+ 
+ void Awake()
+ {
+  sensSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat(sensitivityKey, 1);
+  sensitivityMult = sensitivityMult * 10; sensitivityMult = Mathf.RoundToInt(sensitivityMult); sensitivityMult = sensitivityMult / 10;
+  sensText.text = "Sensitivity: " + sensitivityMult;
+ }
 
  public void InvertedToggle(string key)
  {
@@ -28,7 +35,6 @@ public class SettingsManager : MonoBehaviour
   sensitivityMult = sensitivityMult * 10; sensitivityMult = Mathf.RoundToInt(sensitivityMult); sensitivityMult = sensitivityMult / 10;
   sensText.text = "Sensitivity: " + sensitivityMult;
   PlayerPrefs.SetFloat(sensitivityKey, sensitivityMult);
-  print(sensitivityMult);
  }
 
  public bool LoadBool(string key)

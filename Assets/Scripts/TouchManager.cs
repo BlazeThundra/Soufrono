@@ -28,7 +28,10 @@ public class TouchManager : MonoBehaviour
 
  public void OnTouchPosition(InputAction.CallbackContext ctx)
  {
+ if (Touchscreen.current.primaryTouch.press.isPressed)
+ {
   currentPos = ctx.ReadValue<Vector2>();
+ }
  }
 
  public void OnTouchPress(InputAction.CallbackContext ctx)
